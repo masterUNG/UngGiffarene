@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "902758317626",
+    "firebase_url": "https://unggiffarine.firebaseio.com",
+    "project_id": "unggiffarine",
+    "storage_bucket": "unggiffarine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902758317626:android:30f8e18c5068cf3af93f03",
+        "android_client_info": {
+          "package_name": "com.flutterthailand.unggiffarine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902758317626-jch88dvkpc7rsajj1lcfmiqi5lmbk0v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKmwTUYre-ahx8Gol3D1DshLtctDoW5WM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902758317626-jch88dvkpc7rsajj1lcfmiqi5lmbk0v3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
