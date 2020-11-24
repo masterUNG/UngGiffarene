@@ -4,6 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:unggiffarine/models/user_model.dart';
 import 'package:unggiffarine/state/authen.dart';
+import 'package:unggiffarine/state/information.dart';
+import 'package:unggiffarine/state/show_list_post.dart';
 
 class MyService extends StatefulWidget {
   @override
@@ -12,6 +14,7 @@ class MyService extends StatefulWidget {
 
 class _MyServiceState extends State<MyService> {
   UserModel userModel;
+  Widget currentWidget = ShowListPost();
 
   @override
   void initState() {
@@ -44,6 +47,8 @@ class _MyServiceState extends State<MyService> {
     return Scaffold(
       appBar: AppBar(),
       drawer: buildDrawer(),
+      body: currentWidget,
+      
     );
   }
 
@@ -66,32 +71,38 @@ class _MyServiceState extends State<MyService> {
 
   ListTile buildListTileListPost() {
     return ListTile(
-                leading: Icon(
-                  Icons.article,
-                  size: 36,
-                  color: Colors.purple,
-                ),
-                title: Text('Show List Post'),
-                subtitle: Text('แสดง Post ทั้งหมดที่มีใน ฐานข้อมูล'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              );
+      leading: Icon(
+        Icons.article,
+        size: 36,
+        color: Colors.purple,
+      ),
+      title: Text('Show List Post'),
+      subtitle: Text('แสดง Post ทั้งหมดที่มีใน ฐานข้อมูล'),
+      onTap: () {
+        setState(() {
+          currentWidget = ShowListPost();
+        });
+        Navigator.pop(context);
+      },
+    );
   }
 
   ListTile buildListTileInformation() {
     return ListTile(
-                leading: Icon(
-                  Icons.account_box,
-                  size: 36,
-                  color: Colors.green.shade900,
-                ),
-                title: Text('Information'),
-                subtitle: Text('Display Information of User Logined'),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              );
+      leading: Icon(
+        Icons.account_box,
+        size: 36,
+        color: Colors.green.shade900,
+      ),
+      title: Text('Information'),
+      subtitle: Text('Display Information of User Logined'),
+      onTap: () {
+        setState(() {
+          currentWidget = Informaion();
+        });
+        Navigator.pop(context);
+      },
+    );
   }
 
   UserAccountsDrawerHeader buildUserAccountsDrawerHeader() {
