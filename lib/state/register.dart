@@ -59,7 +59,7 @@ class _RegisterState extends State<Register> {
     return Container(
       margin: EdgeInsets.only(top: 16),
       width: 250,
-      child: TextField(
+      child: TextField(keyboardType: TextInputType.emailAddress,
         onChanged: (value) => user = value.trim(),
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.account_box),
