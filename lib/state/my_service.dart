@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:unggiffarine/models/user_model.dart';
 import 'package:unggiffarine/state/authen.dart';
+import 'package:unggiffarine/state/ebook.dart';
 import 'package:unggiffarine/state/information.dart';
 import 'package:unggiffarine/state/show_list_post.dart';
 
@@ -65,6 +66,8 @@ class _MyServiceState extends State<MyService> {
                 Divider(),
                 buildListTileInformation(),
                 Divider(),
+                buildListTileEbook(),
+                Divider(),
               ],
             ),
           ],
@@ -103,6 +106,25 @@ class _MyServiceState extends State<MyService> {
         setState(() {
           currentWidget = Informaion();
           title = 'Information';
+        });
+        Navigator.pop(context);
+      },
+    );
+  }
+
+  ListTile buildListTileEbook() {
+    return ListTile(
+      leading: Icon(
+        Icons.book,
+        size: 36,
+        color: Colors.blue.shade900,
+      ),
+      title: Text('Ebook'),
+      subtitle: Text('Display Ebook'),
+      onTap: () {
+        setState(() {
+          currentWidget = Ebook();
+          title = 'Ebook';
         });
         Navigator.pop(context);
       },
